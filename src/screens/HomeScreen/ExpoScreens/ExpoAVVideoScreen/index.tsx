@@ -1,76 +1,19 @@
-import React, {Fragment} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React from 'react';
+import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
-const HomeScreen: React.FC = () => {
-  const navigation = useNavigation();
-
-  const expoComponents = [
-    {
-      title: 'expo-av (video)',
-      subtitle: 'video only',
-      onPress: () => {
-        navigation.navigate('ExpoAVVideo' as never);
-      },
-    },
-    {
-      title: 'expo-av (audio)',
-      subtitle: 'audio only',
-      onPress: () => {},
-    },
-    {
-      title: 'expo-video',
-      subtitle: 'video only',
-      onPress: () => {},
-    },
-    {
-      title: 'expo-audio',
-      subtitle: 'audio only',
-      onPress: () => {},
-    },
-  ];
-
+const ExpoAVVideoScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Expo</Text>
-        </View>
-
-        <View style={styles.section}>
-          {expoComponents.map((item, index) => {
-            return (
-              <Fragment key={item.title}>
-                <TouchableOpacity
-                  style={styles.itemContainer}
-                  onPress={item.onPress}>
-                  <View style={styles.itemContent}>
-                    <Text style={styles.itemTitle}>{item.title}</Text>
-                    {item.subtitle && (
-                      <Text style={styles.itemSubtitle}>{item.subtitle}</Text>
-                    )}
-                  </View>
-                </TouchableOpacity>
-                {index === expoComponents.length && (
-                  <View style={styles.separator} />
-                )}
-              </Fragment>
-            );
-          })}
+          <Text style={styles.headerTitle}>Expo-AV (Video)</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default ExpoAVVideoScreen;
 
 const styles = StyleSheet.create({
   container: {

@@ -6,33 +6,59 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // Your screens
 import HomeScreen from '../../screens/HomeScreen';
 import SettingScreen from '../../screens/SettingScreen';
+import ExpoAVVideoScreen from '../../screens/HomeScreen/ExpoScreens/ExpoAVVideoScreen';
+
+// Create separate stack navigators for each tab
+const HomeStack = createNativeStackNavigator();
+const SettingStack = createNativeStackNavigator();
+
+function HomeStackNavigator() {
+  return (
+    <HomeStack.Navigator screenOptions={{headerShown: false}}>
+      <HomeStack.Screen name="HomeIndex" component={HomeScreen} />
+      <HomeStack.Screen name="ExpoAVVideo" component={ExpoAVVideoScreen} />
+    </HomeStack.Navigator>
+  );
+}
+
+function SettingStackNavigator() {
+  return (
+    <SettingStack.Navigator screenOptions={{headerShown: false}}>
+      <SettingStack.Screen name="SettingIndex" component={SettingScreen} />
+    </SettingStack.Navigator>
+  );
+}
 
 // Create the tab navigator
 const Tab = createBottomTabNavigator();
 
 function Tabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingScreen} />
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen
+        name="HomeTab"
+        component={HomeStackNavigator}
+        options={{title: 'Home'}}
+      />
+      <Tab.Screen
+        name="SettingTab"
+        component={SettingStackNavigator}
+        options={{title: 'Settings'}}
+      />
     </Tab.Navigator>
   );
 }
 
-// Create the stack navigator
-const Stack = createNativeStackNavigator();
+// Create the root stack
+const RootStack = createNativeStackNavigator();
 
 const RootNavigator: React.FC = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        {/* This could be your main entry point, which hosts the tabs */}
-        <Stack.Screen
-          name="Tabs"
-          component={Tabs}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
+      <RootStack.Navigator screenOptions={{headerShown: false}}>
+        {/* Main entry point is the tab navigator */}
+        <RootStack.Screen name="Tabs" component={Tabs} />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };
