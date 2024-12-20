@@ -21,13 +21,15 @@ const HomeScreen: React.FC = () => {
       },
     },
     {
-      title: 'expo-av (audio)',
-      subtitle: 'audio only',
-      onPress: () => {},
-    },
-    {
       title: 'expo-video',
       subtitle: 'video only',
+      onPress: () => {
+        navigation.navigate('ExpoVideo' as never);
+      },
+    },
+    {
+      title: 'expo-av (audio)',
+      subtitle: 'audio only',
       onPress: () => {},
     },
     {
