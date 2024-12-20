@@ -15,16 +15,23 @@ const HomeScreen: React.FC = () => {
   const expoComponents = [
     {
       title: 'expo-av (video)',
-      subtitle: 'video only',
+      subtitle: 'multiple video player instances',
       onPress: () => {
         navigation.navigate('ExpoAVVideo' as never);
       },
     },
     {
       title: 'expo-video',
-      subtitle: 'video only',
+      subtitle: 'single player, multiple views',
       onPress: () => {
-        navigation.navigate('ExpoVideo' as never);
+        navigation.navigate('ExpoVideoTest1' as never);
+      },
+    },
+    {
+      title: 'expo-video',
+      subtitle: 'multiple players, multiple views',
+      onPress: () => {
+        navigation.navigate('ExpoVideoTest2' as never);
       },
     },
   ];
@@ -32,7 +39,7 @@ const HomeScreen: React.FC = () => {
   const reactNativeVideoComponents = [
     {
       title: 'react-native-video',
-      subtitle: 'video only',
+      subtitle: 'multiple video player instances',
       onPress: () => {
         navigation.navigate('ReactNativeVideo' as never);
       },
@@ -49,7 +56,7 @@ const HomeScreen: React.FC = () => {
         <View style={styles.section}>
           {expoComponents.map((item, index) => {
             return (
-              <Fragment key={item.title}>
+              <Fragment key={item.subtitle}>
                 <TouchableOpacity
                   style={styles.itemContainer}
                   onPress={item.onPress}>

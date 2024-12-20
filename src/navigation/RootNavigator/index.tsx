@@ -7,8 +7,9 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../../screens/HomeScreen';
 import SettingScreen from '../../screens/SettingScreen';
 import ExpoAVVideoScreen from '../../screens/HomeScreen/ExpoScreens/ExpoAVVideoScreen';
-import ExpoVideoScreen from '../../screens/HomeScreen/ExpoScreens/ExpoVideoScreen';
+import ExpoVideoScreenTest1 from '../../screens/HomeScreen/ExpoScreens/ExpoVideoScreenTest1';
 import ReactNativeVideoScreen from '../../screens/HomeScreen/ReactNativeVideoScreen';
+import ExpoVideoScreenTest2 from '../../screens/HomeScreen/ExpoScreens/ExpoVideoScreenTest2';
 
 // Create separate stack navigators for each tab
 const HomeStack = createNativeStackNavigator();
@@ -19,7 +20,14 @@ function HomeStackNavigator() {
     <HomeStack.Navigator screenOptions={{headerShown: false}}>
       <HomeStack.Screen name="HomeIndex" component={HomeScreen} />
       <HomeStack.Screen name="ExpoAVVideo" component={ExpoAVVideoScreen} />
-      <HomeStack.Screen name="ExpoVideo" component={ExpoVideoScreen} />
+      <HomeStack.Screen
+        name="ExpoVideoTest1"
+        component={ExpoVideoScreenTest1}
+      />
+      <HomeStack.Screen
+        name="ExpoVideoTest2"
+        component={ExpoVideoScreenTest2}
+      />
       <HomeStack.Screen
         name="ReactNativeVideo"
         component={ReactNativeVideoScreen}

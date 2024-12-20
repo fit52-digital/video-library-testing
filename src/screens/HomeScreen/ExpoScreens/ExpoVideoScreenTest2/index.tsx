@@ -8,7 +8,7 @@ import testAssets from '../../../../../assets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
 
-const ExpoVideoScreen: React.FC = () => {
+const ExpoVideoScreenTest2: React.FC = () => {
   const [playerCount, onPlayerCountChange] = useState<number>(3);
 
   const [sourceIndex, setSourceIndex] = useState<number>(1);
@@ -74,6 +74,7 @@ const ExpoVideoScreen: React.FC = () => {
       <ScrollView>
         <View style={styles.header}>
           <Text style={styles.headerTitle}>expo-video</Text>
+          <Text style={styles.subTitle}>multiple players, multiple views</Text>
         </View>
 
         <MediaPlayerControls
@@ -99,7 +100,7 @@ const ExpoVideoScreen: React.FC = () => {
   );
 };
 
-export default ExpoVideoScreen;
+export default ExpoVideoScreenTest2;
 
 const styles = StyleSheet.create({
   container: {
@@ -116,7 +117,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: '#000',
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 4,
+  },
+  subTitle: {
+    fontSize: 16,
+    color: '#333',
+    marginBottom: 20,
   },
   video: {
     width: '100%',
