@@ -1,38 +1,20 @@
-import {useEvent} from 'expo';
-import {useVideoPlayer, VideoView} from 'expo-video';
-
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import Video, {VideoRef} from 'react-native-video';
+import testAssets from '../../../../assets/testAssets';
 
-import testAssets from '../../../../../assets/testAssets';
+import MediaPlayerControls from '../../../components/MediaPlayerControls';
 
-import MediaPlayerControls from '../../../../components/MediaPlayerControls';
-
-const ExpoVideoScreen: React.FC = () => {
+const ReactNativeVideoScreen: React.FC = () => {
   const [playerCount, onPlayerCountChange] = useState<number>(3);
 
+  const videoRefs = useRef<(VideoRef | null)[]>(Array(playerCount).fill(null));
   const [sourceIndex, setSourceIndex] = useState<number>(1);
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
-
-  const videoPlayer = useVideoPlayer(
-    testAssets[sourceIndex][sourceOrigin],
-    player => {
-      player.loop = true;
-      player.muted = true;
-      player.play();
-    },
-  );
-
-  const {isPlaying} = useEvent(videoPlayer, 'playingChange', {
-    isPlaying: videoPlayer?.playing,
-  });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
-    if (isPlaying) {
-      videoPlayer?.pause();
-    } else {
-      videoPlayer?.play();
-    }
+    setIsPlaying(!isPlaying);
   };
 
   const previousSource = () => {
@@ -42,9 +24,6 @@ const ExpoVideoScreen: React.FC = () => {
     } else {
       setSourceIndex(sourceIndex - 1);
     }
-
-    const source = testAssets[sourceIndex][sourceOrigin];
-    videoPlayer?.replace(source);
   };
 
   const nextSource = () => {
@@ -54,9 +33,6 @@ const ExpoVideoScreen: React.FC = () => {
     } else {
       setSourceIndex(sourceIndex + 1);
     }
-
-    const source = testAssets[sourceIndex][sourceOrigin];
-    videoPlayer?.replace(source);
   };
 
   const playerCountIncrease = () => {
@@ -73,7 +49,7 @@ const ExpoVideoScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>expo-video</Text>
+          <Text style={styles.headerTitle}>react-native-video</Text>
         </View>
 
         <MediaPlayerControls
@@ -92,14 +68,26 @@ const ExpoVideoScreen: React.FC = () => {
         />
 
         {Array.from({length: playerCount}).map((_, index) => (
-          <VideoView key={index} style={styles.video} player={videoPlayer} />
+          <Video
+            key={index}
+            ref={el => (videoRefs.current[index] = el)}
+            style={styles.video}
+            source={testAssets[sourceIndex][sourceOrigin]}
+            muted={true}
+            paused={!isPlaying}
+            resizeMode={'contain'}
+            repeat={true}
+            onError={error =>
+              console.log(`ERROR: Video player ${index + 1}`, error)
+            }
+          />
         ))}
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default ExpoVideoScreen;
+export default ReactNativeVideoScreen;
 
 const styles = StyleSheet.create({
   container: {

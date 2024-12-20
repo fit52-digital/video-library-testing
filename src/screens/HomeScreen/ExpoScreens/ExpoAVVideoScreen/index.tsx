@@ -49,7 +49,7 @@ const ExpoAVVideoScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Expo-AV (Video)</Text>
+          <Text style={styles.headerTitle}>expo-av (Video)</Text>
         </View>
 
         <MediaPlayerControls
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f7',
   },
   headerTitle: {
-    fontSize: 34,
+    fontSize: 28,
     color: '#000',
     fontWeight: 'bold',
     marginBottom: 10,

@@ -8,6 +8,7 @@ import HomeScreen from '../../screens/HomeScreen';
 import SettingScreen from '../../screens/SettingScreen';
 import ExpoAVVideoScreen from '../../screens/HomeScreen/ExpoScreens/ExpoAVVideoScreen';
 import ExpoVideoScreen from '../../screens/HomeScreen/ExpoScreens/ExpoVideoScreen';
+import ReactNativeVideoScreen from '../../screens/HomeScreen/ReactNativeVideoScreen';
 
 // Create separate stack navigators for each tab
 const HomeStack = createNativeStackNavigator();
@@ -19,6 +20,10 @@ function HomeStackNavigator() {
       <HomeStack.Screen name="HomeIndex" component={HomeScreen} />
       <HomeStack.Screen name="ExpoAVVideo" component={ExpoAVVideoScreen} />
       <HomeStack.Screen name="ExpoVideo" component={ExpoVideoScreen} />
+      <HomeStack.Screen
+        name="ReactNativeVideo"
+        component={ReactNativeVideoScreen}
+      />
     </HomeStack.Navigator>
   );
 }

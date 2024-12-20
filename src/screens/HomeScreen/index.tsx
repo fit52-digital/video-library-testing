@@ -27,15 +27,15 @@ const HomeScreen: React.FC = () => {
         navigation.navigate('ExpoVideo' as never);
       },
     },
+  ];
+
+  const reactNativeVideoComponents = [
     {
-      title: 'expo-av (audio)',
-      subtitle: 'audio only',
-      onPress: () => {},
-    },
-    {
-      title: 'expo-audio',
-      subtitle: 'audio only',
-      onPress: () => {},
+      title: 'react-native-video',
+      subtitle: 'video only',
+      onPress: () => {
+        navigation.navigate('ReactNativeVideo' as never);
+      },
     },
   ];
 
@@ -67,6 +67,32 @@ const HomeScreen: React.FC = () => {
             );
           })}
         </View>
+
+        <View style={styles.header}>
+          <Text style={styles.headerTitle}>React Native Video</Text>
+        </View>
+
+        <View style={styles.section}>
+          {reactNativeVideoComponents.map((item, index) => {
+            return (
+              <Fragment key={item.title}>
+                <TouchableOpacity
+                  style={styles.itemContainer}
+                  onPress={item.onPress}>
+                  <View style={styles.itemContent}>
+                    <Text style={styles.itemTitle}>{item.title}</Text>
+                    {item.subtitle && (
+                      <Text style={styles.itemSubtitle}>{item.subtitle}</Text>
+                    )}
+                  </View>
+                </TouchableOpacity>
+                {index === reactNativeVideoComponents.length && (
+                  <View style={styles.separator} />
+                )}
+              </Fragment>
+            );
+          })}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -86,7 +112,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f7',
   },
   headerTitle: {
-    fontSize: 34,
+    fontSize: 26,
     color: '#000',
     fontWeight: 'bold',
     marginBottom: 10,
