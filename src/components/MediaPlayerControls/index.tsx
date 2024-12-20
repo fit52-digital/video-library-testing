@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, TouchableOpacity, Switch, Text} from 'react-native';
 
 import PauseIcon from '../icons/PauseIcon';
@@ -33,9 +33,15 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
     onPlayerDecrease,
   } = props;
 
+  const [skipCount, setSkipCount] = useState(0);
+
+  const increaseSkipCount = () => {
+    setSkipCount(prev => prev + 1);
+  };
+
   return (
     <View style={styles.playerWrapper}>
-      <View style={styles.playerControls}>
+      <View style={styles.playerSettings}>
         {onToggle && (
           <View style={styles.sourceToggle}>
             <Switch onValueChange={onToggle} value={toggleValue} />
@@ -45,7 +51,7 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
 
         {onPlayerIncrease && onPlayerDecrease && (
           <View style={styles.playerCountWrapper}>
-            <Text style={styles.sourceLabel}>{`Video players`}</Text>
+            <Text style={styles.sourceLabel}>{`video players`}</Text>
             <View style={styles.counterContainer}>
               <TouchableOpacity
                 onPress={onPlayerDecrease}
@@ -61,10 +67,24 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
             </View>
           </View>
         )}
+        <View style={styles.skipCounterContainer}>
+          <TouchableOpacity
+            onPress={() => setSkipCount(0)}
+            style={styles.resetButtonContainer}>
+            <Text style={styles.resetButtonText}>Reset</Text>
+          </TouchableOpacity>
+          <Text style={styles.sourceLabel}>
+            skips: <Text style={styles.boldLabel}>{skipCount}</Text>
+          </Text>
+        </View>
       </View>
 
       <View style={styles.playerControls}>
-        <TouchableOpacity onPress={previousSource}>
+        <TouchableOpacity
+          onPress={() => {
+            previousSource?.();
+            increaseSkipCount();
+          }}>
           <SkipIcon
             height={24}
             width={24}
@@ -81,7 +101,11 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
           )}
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={nextSource}>
+        <TouchableOpacity
+          onPress={() => {
+            nextSource?.();
+            increaseSkipCount();
+          }}>
           <SkipIcon height={24} width={24} color="#000" />
         </TouchableOpacity>
       </View>
@@ -95,6 +119,13 @@ const styles = StyleSheet.create({
   playerWrapper: {
     flexDirection: 'column',
     alignItems: 'center',
+  },
+  playerSettings: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginBottom: 10,
   },
   playerControls: {
     width: '100%',
@@ -120,7 +151,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   sourceLabel: {
-    marginHorizontal: 8,
     fontSize: 14,
     color: '#000',
   },
@@ -128,15 +158,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 5,
+    gap: 2,
   },
   counterButton: {
     width: 30,
     height: 30,
-    backgroundColor: '#eee',
-    borderRadius: 4,
+    backgroundColor: '#fff',
+    borderColor: '#000',
+    borderWidth: 1,
     justifyContent: 'center',
+    borderRadius: 25,
     alignItems: 'center',
-    marginHorizontal: 5,
   },
   counterText: {
     fontSize: 18,
@@ -147,5 +179,26 @@ const styles = StyleSheet.create({
     color: '#000',
     width: 40,
     textAlign: 'center',
+  },
+  skipCounterContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+  },
+  resetButtonContainer: {
+    backgroundColor: '#ddd',
+    borderRadius: 4,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+  },
+  resetButtonText: {
+    fontSize: 12,
+    color: '#000',
+    fontWeight: '500',
+  },
+  boldLabel: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#000',
   },
 });
