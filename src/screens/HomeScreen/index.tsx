@@ -38,7 +38,7 @@ const HomeScreen: React.FC = () => {
 
   const reactNativeVideoComponents = [
     {
-      title: 'react-native-video',
+      title: 'react-native-video (v6)',
       subtitle: 'multiple video player instances',
       onPress: () => {
         navigation.navigate('ReactNativeVideo' as never);

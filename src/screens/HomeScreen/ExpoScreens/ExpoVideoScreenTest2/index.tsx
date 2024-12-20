@@ -1,38 +1,20 @@
-import {useEvent} from 'expo';
-import {useVideoPlayer, VideoView} from 'expo-video';
-
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
 import testAssets from '../../../../../assets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
+import ExpoVideoStandalonePlayer from './ExpoVideoStandalonePlayer';
 
 const ExpoVideoScreenTest2: React.FC = () => {
   const [playerCount, onPlayerCountChange] = useState<number>(3);
 
   const [sourceIndex, setSourceIndex] = useState<number>(1);
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
-
-  const videoPlayer = useVideoPlayer(
-    testAssets[sourceIndex][sourceOrigin],
-    player => {
-      player.loop = true;
-      player.muted = true;
-      player.play();
-    },
-  );
-
-  const {isPlaying} = useEvent(videoPlayer, 'playingChange', {
-    isPlaying: videoPlayer?.playing,
-  });
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
-    if (isPlaying) {
-      videoPlayer?.pause();
-    } else {
-      videoPlayer?.play();
-    }
+    setIsPlaying(!isPlaying);
   };
 
   const previousSource = () => {
@@ -42,9 +24,6 @@ const ExpoVideoScreenTest2: React.FC = () => {
     } else {
       setSourceIndex(sourceIndex - 1);
     }
-
-    const source = testAssets[sourceIndex][sourceOrigin];
-    videoPlayer?.replace(source);
   };
 
   const nextSource = () => {
@@ -54,9 +33,6 @@ const ExpoVideoScreenTest2: React.FC = () => {
     } else {
       setSourceIndex(sourceIndex + 1);
     }
-
-    const source = testAssets[sourceIndex][sourceOrigin];
-    videoPlayer?.replace(source);
   };
 
   const playerCountIncrease = () => {
@@ -93,7 +69,11 @@ const ExpoVideoScreenTest2: React.FC = () => {
         />
 
         {Array.from({length: playerCount}).map((_, index) => (
-          <VideoView key={index} style={styles.video} player={videoPlayer} />
+          <ExpoVideoStandalonePlayer
+            key={index}
+            isPlaying={isPlaying}
+            source={testAssets[sourceIndex][sourceOrigin]}
+          />
         ))}
       </ScrollView>
     </SafeAreaView>
@@ -117,12 +97,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: '#000',
     fontWeight: 'bold',
-    marginBottom: 4,
+    marginBottom: 10,
   },
   subTitle: {
     fontSize: 16,
     color: '#333',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   video: {
     width: '100%',

@@ -49,7 +49,7 @@ const ReactNativeVideoScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>react-native-video</Text>
+          <Text style={styles.headerTitle}>react-native-video (v6)</Text>
         </View>
 
         <MediaPlayerControls
