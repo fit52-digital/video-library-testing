@@ -1,14 +1,14 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
-import Video, {VideoRef} from 'react-native-video';
-import testAssets from '../../../../videoAssets/testAssets';
+import {Video, ResizeMode} from 'expo-av';
+import testAssets from '../../../../../videoAssets/testAssets';
 
-import MediaPlayerControls from '../../../components/MediaPlayerControls';
+import MediaPlayerControls from '../../../../components/MediaPlayerControls';
 
-const ReactNativeVideoScreen: React.FC = () => {
+const ExpoAVAudioScreen: React.FC = () => {
   const [playerCount, onPlayerCountChange] = useState<number>(3);
 
-  const videoRefs = useRef<(VideoRef | null)[]>(Array(playerCount).fill(null));
+  const videoRefs = useRef<(Video | null)[]>(Array(playerCount).fill(null));
   const [sourceIndex, setSourceIndex] = useState<number>(1);
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
   const [isPlaying, setIsPlaying] = useState(false);
@@ -49,7 +49,7 @@ const ReactNativeVideoScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>react-native-video (v6)</Text>
+          <Text style={styles.headerTitle}>expo-av (Audio)</Text>
         </View>
 
         <MediaPlayerControls
@@ -73,10 +73,11 @@ const ReactNativeVideoScreen: React.FC = () => {
             ref={el => (videoRefs.current[index] = el)}
             style={styles.video}
             source={testAssets[sourceIndex][sourceOrigin]}
-            muted={true}
-            paused={!isPlaying}
-            resizeMode={'contain'}
-            repeat={true}
+            useNativeControls={false}
+            isMuted={true}
+            shouldPlay={isPlaying}
+            resizeMode={ResizeMode.CONTAIN}
+            isLooping
             onError={error =>
               console.log(`ERROR: Video player ${index + 1}`, error)
             }
@@ -87,7 +88,7 @@ const ReactNativeVideoScreen: React.FC = () => {
   );
 };
 
-export default ReactNativeVideoScreen;
+export default ExpoAVAudioScreen;
 
 const styles = StyleSheet.create({
   container: {

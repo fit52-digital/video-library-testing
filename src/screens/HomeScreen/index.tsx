@@ -21,6 +21,13 @@ const HomeScreen: React.FC = () => {
       },
     },
     {
+      title: 'expo-av (audio)',
+      subtitle: 'multiple audio player instances',
+      onPress: () => {
+        navigation.navigate('ExpoAVAudio' as never);
+      },
+    },
+    {
       title: 'expo-video',
       subtitle: 'single player, multiple views',
       onPress: () => {

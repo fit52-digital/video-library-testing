@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import {Video, ResizeMode} from 'expo-av';
-import testAssets from '../../../../../assets/testAssets';
+import testAssets from '../../../../../videoAssets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
 
