@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import Video, {VideoRef} from 'react-native-video';
-import testAssets from '../../../../videoAssets/testAssets';
+import testVideoAssets from '../../../../videoAssets/testAssets';
 
 import MediaPlayerControls from '../../../components/MediaPlayerControls';
 
@@ -72,7 +72,7 @@ const ReactNativeVideoScreen: React.FC = () => {
             key={index}
             ref={el => (videoRefs.current[index] = el)}
             style={styles.video}
-            source={testAssets[sourceIndex][sourceOrigin]}
+            source={testVideoAssets[sourceIndex][sourceOrigin]}
             muted={true}
             paused={!isPlaying}
             resizeMode={'contain'}

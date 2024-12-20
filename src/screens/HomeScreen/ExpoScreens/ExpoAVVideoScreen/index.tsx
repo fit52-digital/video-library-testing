@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import {Video, ResizeMode} from 'expo-av';
-import testAssets from '../../../../../videoAssets/testAssets';
+import testVideoAssets from '../../../../../videoAssets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
 
@@ -72,7 +72,7 @@ const ExpoAVVideoScreen: React.FC = () => {
             key={index}
             ref={el => (videoRefs.current[index] = el)}
             style={styles.video}
-            source={testAssets[sourceIndex][sourceOrigin]}
+            source={testVideoAssets[sourceIndex][sourceOrigin]}
             useNativeControls={false}
             isMuted={true}
             shouldPlay={isPlaying}

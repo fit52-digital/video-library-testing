@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
-import testAssets from '../../../../../videoAssets/testAssets';
+import testVideoAssets from '../../../../../videoAssets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
 import ExpoVideoStandalonePlayer from './ExpoVideoStandalonePlayer';
@@ -72,7 +72,7 @@ const ExpoVideoScreenTest2: React.FC = () => {
           <ExpoVideoStandalonePlayer
             key={index}
             isPlaying={isPlaying}
-            source={testAssets[sourceIndex][sourceOrigin]}
+            source={testVideoAssets[sourceIndex][sourceOrigin]}
           />
         ))}
       </ScrollView>

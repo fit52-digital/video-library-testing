@@ -4,7 +4,7 @@ import {useVideoPlayer, VideoView} from 'expo-video';
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
-import testAssets from '../../../../../videoAssets/testAssets';
+import testVideoAssets from '../../../../../videoAssets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
 
@@ -15,7 +15,7 @@ const ExpoVideoScreenTest1: React.FC = () => {
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
 
   const videoPlayer = useVideoPlayer(
-    testAssets[sourceIndex][sourceOrigin],
+    testVideoAssets[sourceIndex][sourceOrigin],
     player => {
       player.loop = true;
       player.muted = true;
@@ -43,7 +43,7 @@ const ExpoVideoScreenTest1: React.FC = () => {
       setSourceIndex(sourceIndex - 1);
     }
 
-    const source = testAssets[sourceIndex][sourceOrigin];
+    const source = testVideoAssets[sourceIndex][sourceOrigin];
     videoPlayer?.replace(source);
   };
 
@@ -55,7 +55,7 @@ const ExpoVideoScreenTest1: React.FC = () => {
       setSourceIndex(sourceIndex + 1);
     }
 
-    const source = testAssets[sourceIndex][sourceOrigin];
+    const source = testVideoAssets[sourceIndex][sourceOrigin];
     videoPlayer?.replace(source);
   };
 
