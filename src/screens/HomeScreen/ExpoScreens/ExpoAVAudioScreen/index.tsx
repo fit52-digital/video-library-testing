@@ -1,14 +1,14 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
-import {Video, ResizeMode} from 'expo-av';
-import testVideoAssets from '../../../../../videoAssets/testAssets';
+
+import testAudioAssets from '../../../../../audioAssets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
+import ExpoAVAudioPlayerItem from './ExpoAVAudioPlayerItem';
 
 const ExpoAVAudioScreen: React.FC = () => {
-  const [playerCount, onPlayerCountChange] = useState<number>(3);
+  const [playerCount, onPlayerCountChange] = useState<number>(1);
 
-  const videoRefs = useRef<(Video | null)[]>(Array(playerCount).fill(null));
   const [sourceIndex, setSourceIndex] = useState<number>(1);
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
   const [isPlaying, setIsPlaying] = useState(false);
@@ -68,19 +68,11 @@ const ExpoAVAudioScreen: React.FC = () => {
         />
 
         {Array.from({length: playerCount}).map((_, index) => (
-          <Video
+          <ExpoAVAudioPlayerItem
             key={index}
-            ref={el => (videoRefs.current[index] = el)}
-            style={styles.video}
-            source={testVideoAssets[sourceIndex][sourceOrigin]}
-            useNativeControls={false}
-            isMuted={true}
-            shouldPlay={isPlaying}
-            resizeMode={ResizeMode.CONTAIN}
-            isLooping
-            onError={error =>
-              console.log(`ERROR: Video player ${index + 1}`, error)
-            }
+            source={[testAudioAssets[sourceIndex][sourceOrigin]]}
+            index={index}
+            isPlaying={isPlaying}
           />
         ))}
       </ScrollView>

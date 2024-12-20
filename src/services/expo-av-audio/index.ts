@@ -4,13 +4,19 @@ const sound = new Audio.Sound();
 
 type MediaSource = number | {uri: string};
 
+// Converts incoming uri's to the preffered format for expo-av to use.
+// - Bundled files require the file id
+// - Remote files require https://path
+// - Local files require file:///path
 const convertIncomingUriToSource = (uri: string | number): MediaSource => {
   // Bundled files will have their uri resolve to a number id
   if (typeof uri === 'number') {
     return uri;
   }
 
-  return {uri};
+  const isRemoteFile = /^https?:\/\//.test(uri);
+
+  return {uri: `${isRemoteFile ? '' : 'file:///'}${uri}`};
 };
 
 const setupAudioPlayer = async () => {
@@ -62,9 +68,9 @@ const loadAndPlayAudioTrack = async (
 
     // TODO: Fix the following expo issues. We should not be manually clearing the internal loading state of the sound object.
     // Clear the internal loading state to avoid blocking future audio loads
-
+    // eslint-disable-next-line no-underscore-dangle
     sound._loaded = false;
-
+    // eslint-disable-next-line no-underscore-dangle
     sound._loading = false;
 
     onLoadErrorCallback?.();
@@ -157,7 +163,7 @@ const discardAudioTrack = async (): Promise<void> => {
     await sound.stopAsync();
     await sound.unloadAsync();
   } catch (err: any) {
-    console.log('discardAudioTrack()', err);
+    console.log(`discardAudioTrack()`, err);
   }
 };
 
