@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 
+import testVideoAssets from '../../../../../videoAssets/testAssets';
 import testAudioAssets from '../../../../../audioAssets/testAssets';
 
 import MediaPlayerControls from '../../../../components/MediaPlayerControls';
-import ExpoAudioPlayerListItem from './ExpoAudioPlayerListItem';
+import ExpoVideoAndAudioItem from './ExpoVideoAndAudioListItem';
 
-const ExpoAudioScreenTest1: React.FC = () => {
-  const [playerCount, onPlayerCountChange] = useState<number>(1);
+const ExpoVideoAndAudioScreenTest1: React.FC = () => {
+  const [playerCount, onPlayerCountChange] = useState<number>(3);
 
   const [sourceIndex, setSourceIndex] = useState<number>(1);
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>(
@@ -51,8 +52,13 @@ const ExpoAudioScreenTest1: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>expo-audio</Text>
-          <Text style={styles.subTitle}>bundle assets not working atm</Text>
+          <Text style={styles.headerTitle}>expo-video & expo-audio</Text>
+          <Text style={styles.subHeaderTitle}>
+            video and audio player paired together
+          </Text>
+          <Text style={styles.subSubHeaderTitle}>
+            bundle assets not working atm
+          </Text>
         </View>
 
         <MediaPlayerControls
@@ -71,10 +77,11 @@ const ExpoAudioScreenTest1: React.FC = () => {
         />
 
         {Array.from({length: playerCount}).map((_, index) => (
-          <ExpoAudioPlayerListItem
+          <ExpoVideoAndAudioItem
             key={index}
-            source={testAudioAssets[sourceIndex][sourceOrigin]}
             index={index}
+            videoSource={testVideoAssets[sourceIndex][sourceOrigin]}
+            audioSource={testAudioAssets[sourceIndex][sourceOrigin]}
             isPlaying={isPlaying}
           />
         ))}
@@ -83,7 +90,7 @@ const ExpoAudioScreenTest1: React.FC = () => {
   );
 };
 
-export default ExpoAudioScreenTest1;
+export default ExpoVideoAndAudioScreenTest1;
 
 const styles = StyleSheet.create({
   container: {
@@ -100,11 +107,18 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: '#000',
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 5,
   },
-  subTitle: {
+  subHeaderTitle: {
+    fontSize: 18,
+    color: '#333',
+
+    marginBottom: 5,
+  },
+  subSubHeaderTitle: {
     fontSize: 14,
     color: 'red',
+
     marginBottom: 10,
   },
   video: {

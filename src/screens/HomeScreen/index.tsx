@@ -55,6 +55,13 @@ const HomeScreen: React.FC = () => {
         navigation.navigate('ExpoAudioTest1' as never);
       },
     },
+    {
+      title: 'expo-video & expo-audio',
+      subtitle: 'video and audio player paired together',
+      onPress: () => {
+        navigation.navigate('ExpoVideoAndAudioTest1' as never);
+      },
+    },
   ];
 
   const reactNativeVideoComponents = [
