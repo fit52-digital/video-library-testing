@@ -54,14 +54,15 @@ From our findings:
 
 - **Expo-AV** and **react-native-video** package both the player and its view together, making each instance heavier. Running multiple instances often leads to instability or crashes sooner.  
 - **expo-video** separates the player from the view, enabling you to manage a single video player across multiple views. This approach shows roughly 5× the capacity in terms of number of views without significant slowdown.  
-- However, when **expo-video** is used in a “standalone” manner (where the view and player share the same component), performance under stress resembles that of Expo-AV and React Native Video. 
+- However, when **expo-video** is used in a “standalone” manner (where the view and player share the same component), performance under stress does drop significantly compared to without, however still roughly 2x more players can be loaded from testing, which is substantial.
 - For **audio** alone, performance improves further because no view element is involved. Both **expo-av (audio)** and **expo-audio** handle more simultaneous audio players—about 2–3× more than the video combinations—before crashing.  
 - Combining audio and video (e.g., **expo-av** with both audio and video in one component) creates additional overhead, resulting in fewer possible instances before a crash.  
 - Overall, **expo-video + expo-audio** perform similarly (and slightly better) compared to **expo-av** when combining audio and video.
 
 ### Key Takeaway
-1. Performance bottlenecks primarily arise when each component holds both the player and its view. Splitting the player from the view greatly improves scalability. 
-2. Problems begin to arise when sources are changed, so this seems to indicate and ineffective cleanup or handling of new sources.
+1. `expo-video` and `expo-audio` significantly outperform `expo-av` and `react-native-video (v6)` in stress testing. This means that 2-3x more views can be rendered on avg before switching sources causing noticeable un-responsiveness or crashing from the app.
+2. Performance bottlenecks primarily arise when each component holds both the player and its view. Splitting the player from the view greatly improves scalability. 
+3. Problems begin to arise when sources are changed, so this seems to indicate and ineffective cleanup or handling of new sources.
 
 > **Disclaimer:**  
 > These observations are based on initial, informal tests and should be taken with a grain of salt. However, early indications strongly favor a strategy in which the player and view are decoupled (as in **expo-video**) and where audio and video usage are optimized or split across newer Expo libraries.
