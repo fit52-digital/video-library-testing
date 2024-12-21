@@ -1,17 +1,103 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import useExpoAVAudioTracks from '../../../../../hooks/useExpoAVAudioTracks';
+import {Audio, AVPlaybackSource} from 'expo-av';
+
+const convertIncomingUriToSource = (uri: string | number): AVPlaybackSource => {
+  // Bundled files may be imported as a numeric resource, e.g., require('path/to/file')
+  if (typeof uri === 'number') {
+    return uri;
+  }
+  return {uri};
+};
 
 interface IExpoAudioPlayerItemProps {
-  source: (string | number)[];
+  source: string | number;
   isPlaying?: boolean;
   index: number;
 }
 
 const ExpoAVAudioPlayerItem: React.FC<IExpoAudioPlayerItemProps> = props => {
   const {source, isPlaying = false, index} = props;
+  const [soundPlayer, setSoundPlayer] = useState<Audio.Sound | null>(null);
 
-  useExpoAVAudioTracks(source);
+  /**
+   * Load or reload sound whenever the source changes
+   */
+  useEffect(() => {
+    let mounted = true;
+    let currentSound: Audio.Sound | null = null;
+
+    const loadSound = async () => {
+      try {
+        if (soundPlayer) {
+          await soundPlayer.unloadAsync();
+          setSoundPlayer(null);
+        }
+
+        const {sound} = await Audio.Sound.createAsync(
+          convertIncomingUriToSource(source),
+        );
+
+        if (mounted) {
+          currentSound = sound;
+          setSoundPlayer(sound);
+        }
+      } catch (error) {
+        console.warn('[ExpoAVAudioPlayerItem] Error loading sound:', error);
+      }
+    };
+
+    loadSound();
+
+    // Cleanup
+    return () => {
+      mounted = false;
+      if (currentSound) {
+        currentSound.unloadAsync();
+      }
+    };
+    // Only re-run if `source` changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [source]);
+
+  /**
+   * Play or pause sound whenever `isPlaying` changes,
+   * assuming the sound has been loaded
+   */
+  useEffect(() => {
+    if (!soundPlayer) {
+      return;
+    }
+    let isCancelled = false;
+
+    const controlPlayback = async () => {
+      try {
+        if (isPlaying) {
+          await soundPlayer.playAsync();
+        } else {
+          await soundPlayer.pauseAsync();
+        }
+      } catch (error) {
+        if (!isCancelled) {
+          console.warn('[ExpoAVAudioPlayerItem] Playback error:', error);
+        }
+      }
+    };
+
+    controlPlayback();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [soundPlayer, isPlaying]);
+
+  useEffect(() => {
+    return () => {
+      if (soundPlayer) {
+        soundPlayer.unloadAsync();
+      }
+    };
+  }, [soundPlayer]);
 
   return (
     <View style={styles.container}>

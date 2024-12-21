@@ -70,7 +70,7 @@ const ExpoAVAudioScreen: React.FC = () => {
         {Array.from({length: playerCount}).map((_, index) => (
           <ExpoAVAudioPlayerItem
             key={index}
-            source={[testAudioAssets[sourceIndex][sourceOrigin]]}
+            source={testAudioAssets[sourceIndex][sourceOrigin]}
             index={index}
             isPlaying={isPlaying}
           />

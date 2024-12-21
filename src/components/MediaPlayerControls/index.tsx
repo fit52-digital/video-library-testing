@@ -51,7 +51,7 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
 
         {onPlayerIncrease && onPlayerDecrease && (
           <View style={styles.playerCountWrapper}>
-            <Text style={styles.sourceLabel}>{`video players`}</Text>
+            <Text style={styles.sourceLabel}>{`number of views`}</Text>
             <View style={styles.counterContainer}>
               <TouchableOpacity
                 onPress={onPlayerDecrease}
