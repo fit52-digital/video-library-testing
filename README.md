@@ -60,7 +60,32 @@ From our findings:
 - Overall, **expo-video + expo-audio** perform similarly (and slightly better) compared to **expo-av** when combining audio and video.
 
 ### Key Takeaway
-Performance bottlenecks primarily arise when each component holds both the player and its view. Splitting the player from the view greatly improves scalability. 
+1. Performance bottlenecks primarily arise when each component holds both the player and its view. Splitting the player from the view greatly improves scalability. 
+2. Problems begin to arise when sources are changed, so this seems to indicate and ineffective cleanup or handling of new sources.
 
 > **Disclaimer:**  
 > These observations are based on initial, informal tests and should be taken with a grain of salt. However, early indications strongly favor a strategy in which the player and view are decoupled (as in **expo-video**) and where audio and video usage are optimized or split across newer Expo libraries.
+
+
+## Testing Guide
+
+This app contains several configurations accessible from the main screen. There are two main sections:
+
+1. **Expo**  
+2. **React Native Video**  
+
+Each section showcases different approaches using its respective libraries. The titles and subtitles indicate which library is in use (e.g., "`expo-video`") and the configuration type. 
+
+For instance, **"multiple players, multiple views"** means the demo instantiates multiple video players, each paired with its own view. Meanwhile, **"single player, multiple views"** means a single player instance is shared by multiple views. If a library doesn’t support separating the video player from its view, each instance includes both the player and view together.
+
+![Main screen](image.png)
+
+Within each test configuration, you can:
+
+- Adjust the number of instances  
+- Play or pause playback  
+- Cycle through various media assets  
+- Toggle the asset origin (local or remote)  
+- Track how many assets have been skipped while cycling  
+
+![Configuration screen](image-1.png)
