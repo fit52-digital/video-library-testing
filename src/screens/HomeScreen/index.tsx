@@ -41,6 +41,13 @@ const HomeScreen: React.FC = () => {
         navigation.navigate('ExpoVideoTest2' as never);
       },
     },
+    {
+      title: 'expo-audio',
+      subtitle: 'multiple audio player instances',
+      onPress: () => {
+        navigation.navigate('ExpoAudioTest1' as never);
+      },
+    },
   ];
 
   const reactNativeVideoComponents = [
@@ -63,7 +70,7 @@ const HomeScreen: React.FC = () => {
         <View style={styles.section}>
           {expoComponents.map((item, index) => {
             return (
-              <Fragment key={item.subtitle}>
+              <Fragment key={item.title + item.subtitle}>
                 <TouchableOpacity
                   style={styles.itemContainer}
                   onPress={item.onPress}>

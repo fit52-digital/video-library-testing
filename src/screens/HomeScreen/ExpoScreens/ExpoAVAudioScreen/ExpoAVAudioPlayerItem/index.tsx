@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from 'react-native';
 import {Audio, AVPlaybackSource} from 'expo-av';
 
 const convertIncomingUriToSource = (uri: string | number): AVPlaybackSource => {
-  // Bundled files may be imported as a numeric resource, e.g., require('path/to/file')
   if (typeof uri === 'number') {
     return uri;
   }
@@ -20,9 +19,6 @@ const ExpoAVAudioPlayerItem: React.FC<IExpoAudioPlayerItemProps> = props => {
   const {source, isPlaying = false, index} = props;
   const [soundPlayer, setSoundPlayer] = useState<Audio.Sound | null>(null);
 
-  /**
-   * Load or reload sound whenever the source changes
-   */
   useEffect(() => {
     let mounted = true;
     let currentSound: Audio.Sound | null = null;
@@ -49,21 +45,16 @@ const ExpoAVAudioPlayerItem: React.FC<IExpoAudioPlayerItemProps> = props => {
 
     loadSound();
 
-    // Cleanup
     return () => {
       mounted = false;
       if (currentSound) {
         currentSound.unloadAsync();
       }
     };
-    // Only re-run if `source` changes
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [source]);
 
-  /**
-   * Play or pause sound whenever `isPlaying` changes,
-   * assuming the sound has been loaded
-   */
   useEffect(() => {
     if (!soundPlayer) {
       return;
@@ -101,7 +92,7 @@ const ExpoAVAudioPlayerItem: React.FC<IExpoAudioPlayerItemProps> = props => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>{`Audio player (${index})`}</Text>
+      <Text style={styles.label}>{`Audio player (${index + 1})`}</Text>
       <Text style={styles.status}>{isPlaying ? 'Playing' : 'Paused'}</Text>
     </View>
   );
