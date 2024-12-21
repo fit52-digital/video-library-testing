@@ -81,6 +81,7 @@ const ExpoVideoScreenTest1: React.FC = () => {
           isPlaying={isPlaying}
           togglePlay={togglePlay}
           nextSource={nextSource}
+          title="number of views"
           previousSource={previousSource}
           toggleLabel={sourceOrigin}
           toggleValue={sourceOrigin === 'local'}

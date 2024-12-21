@@ -13,7 +13,7 @@ interface IMediaPlayerControls {
   toggleValue?: boolean;
   toggleLabel?: string;
   onToggle?: () => void;
-
+  title?: string;
   onPlayerIncrease?: () => void;
   onPlayerDecrease?: () => void;
   playerCount?: number;
@@ -28,6 +28,7 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
     toggleValue,
     toggleLabel,
     onToggle,
+    title = 'number of players',
     playerCount,
     onPlayerIncrease,
     onPlayerDecrease,
@@ -51,7 +52,7 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
 
         {onPlayerIncrease && onPlayerDecrease && (
           <View style={styles.playerCountWrapper}>
-            <Text style={styles.sourceLabel}>{`number of views`}</Text>
+            <Text style={styles.sourceLabel}>{title}</Text>
             <View style={styles.counterContainer}>
               <TouchableOpacity
                 onPress={onPlayerDecrease}
