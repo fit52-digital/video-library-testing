@@ -28,6 +28,13 @@ const HomeScreen: React.FC = () => {
       },
     },
     {
+      title: 'expo-av',
+      subtitle: 'audio and video player paired together',
+      onPress: () => {
+        navigation.navigate('ExpoAVTest1' as never);
+      },
+    },
+    {
       title: 'expo-video',
       subtitle: 'single player, multiple views',
       onPress: () => {

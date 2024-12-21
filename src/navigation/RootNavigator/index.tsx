@@ -12,6 +12,7 @@ import ReactNativeVideoScreen from '../../screens/HomeScreen/ReactNativeVideoScr
 import ExpoVideoScreenTest2 from '../../screens/HomeScreen/ExpoScreens/ExpoVideoScreenTest2';
 import ExpoAVAudioScreen from '../../screens/HomeScreen/ExpoScreens/ExpoAVAudioScreen';
 import ExpoAudioScreenTest1 from '../../screens/HomeScreen/ExpoScreens/ExpoAudioScreenTest1';
+import ExpoAVTestScreen1 from '../../screens/HomeScreen/ExpoScreens/ExpoAVScreenTest1';
 
 // Create separate stack navigators for each tab
 const HomeStack = createNativeStackNavigator();
@@ -35,6 +36,7 @@ function HomeStackNavigator() {
         name="ExpoAudioTest1"
         component={ExpoAudioScreenTest1}
       />
+      <HomeStack.Screen name="ExpoAVTest1" component={ExpoAVTestScreen1} />
       <HomeStack.Screen
         name="ReactNativeVideo"
         component={ReactNativeVideoScreen}
