@@ -16,6 +16,7 @@ const HomeScreen: React.FC = () => {
     {
       title: 'expo-av (video)',
       subtitle: 'multiple video player instances',
+      description: `Stress test the expo-av (video) by launching multiple simultaneous video players to quickly induce crashes or unresponsiveness for benchmarking.\n\nCreate over 20 instances and cycle through available tracks; if the app remains responsive, add more players until it becomes unresponsive.`,
       onPress: () => {
         navigation.navigate('ExpoAVVideo' as never);
       },
@@ -30,6 +31,7 @@ const HomeScreen: React.FC = () => {
     {
       title: 'expo-av',
       subtitle: 'audio and video player paired together',
+      description: `Stress test the expo-av library together, by launching multiple simultaneous audio & video players to quickly induce crashes or unresponsiveness for benchmarking.\n\nCreate multiple instances and cycle through available tracks; if the app remains responsive, add more players until it becomes unresponsive.`,
       onPress: () => {
         navigation.navigate('ExpoAVTest1' as never);
       },
@@ -37,6 +39,7 @@ const HomeScreen: React.FC = () => {
     {
       title: 'expo-video',
       subtitle: 'single player, multiple views',
+      description: `Stress test for the **expo-video** library using a single shared video player across multiple parallel views, comparing the separated player/view approach to the combined model.\n\nTests show a 4–5× increase in instances without significant impact.\n\nHowever, on Android only one view can play at once, whereas iOS supports multiple simultaneous views, suggesting a potential bug or limitation in the split player/view approach.`,
       onPress: () => {
         navigation.navigate('ExpoVideoTest1' as never);
       },
@@ -44,6 +47,7 @@ const HomeScreen: React.FC = () => {
     {
       title: 'expo-video',
       subtitle: 'multiple players, multiple views',
+      description: `Stress test of the expo-video library’s combined player/view approach, benchmarking it directly against the deprecated expo-av component. The test assesses whether expo-video offers significant performance improvements.\n\nTesting shows that expo-video handles high instance loads markedly better than expo-av, demonstrating a welcomed enhancement.`,
       onPress: () => {
         navigation.navigate('ExpoVideoTest2' as never);
       },
@@ -58,6 +62,7 @@ const HomeScreen: React.FC = () => {
     {
       title: 'expo-video & expo-audio',
       subtitle: 'video and audio player paired together',
+      description: `Stress test the latest expo-video and expo-audio libraries using their combined player/view approaches, benchmarking them against the deprecated expo-av components.\n\nThe test evaluates whether expo-video and expo-audio offer significant performance improvements. Results show that expo-video handles high instance loads markedly better than expo-av, demonstrating a welcomed enhancement.`,
       onPress: () => {
         navigation.navigate('ExpoVideoAndAudioTest1' as never);
       },
@@ -68,6 +73,7 @@ const HomeScreen: React.FC = () => {
     {
       title: 'react-native-video (v6)',
       subtitle: 'multiple video player instances',
+      description: `Stress test react-native-video (v6) launching multiple simultaneous video players to quickly induce crashes or unresponsiveness for benchmarking.\n\nCreate over 20 instances and cycle through available tracks; if the app remains responsive, add more players until it becomes unresponsive.`,
       onPress: () => {
         navigation.navigate('ReactNativeVideo' as never);
       },
@@ -92,6 +98,9 @@ const HomeScreen: React.FC = () => {
                     <Text style={styles.itemTitle}>{item.title}</Text>
                     {item.subtitle && (
                       <Text style={styles.itemSubtitle}>{item.subtitle}</Text>
+                    )}
+                    {item.description && (
+                      <Text style={styles.bodyText}>{item.description}</Text>
                     )}
                   </View>
                 </TouchableOpacity>
@@ -118,6 +127,9 @@ const HomeScreen: React.FC = () => {
                     <Text style={styles.itemTitle}>{item.title}</Text>
                     {item.subtitle && (
                       <Text style={styles.itemSubtitle}>{item.subtitle}</Text>
+                    )}
+                    {item.description && (
+                      <Text style={styles.bodyText}>{item.description}</Text>
                     )}
                   </View>
                 </TouchableOpacity>
@@ -151,6 +163,10 @@ const styles = StyleSheet.create({
     color: '#000',
     fontWeight: 'bold',
     marginBottom: 10,
+  },
+  bodyText: {
+    fontSize: 12,
+    color: '#333',
   },
   searchBox: {
     backgroundColor: '#e0e0e0',
@@ -207,13 +223,15 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   itemTitle: {
-    color: '#000',
+    color: '#007aff',
     fontSize: 16,
   },
   itemSubtitle: {
     color: '#8e8e93',
-    fontSize: 14,
+    fontSize: 16,
     marginTop: 2,
+    fontStyle: 'italic',
+    marginBottom: 8,
   },
   separator: {
     height: StyleSheet.hairlineWidth,
