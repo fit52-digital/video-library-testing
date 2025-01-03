@@ -14,6 +14,11 @@ const ExpoVideoScreenTest1: React.FC = () => {
   const [sourceIndex, setSourceIndex] = useState<number>(1);
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
 
+  const [videoSize, setVideoSize] = useState<'small' | 'large'>('large');
+  const toggleVideoSize = () => {
+    setVideoSize(videoSize === 'small' ? 'large' : 'small');
+  };
+
   const videoPlayer = useVideoPlayer(
     testVideoAssets[sourceIndex][sourceOrigin],
     player => {
@@ -78,6 +83,8 @@ const ExpoVideoScreenTest1: React.FC = () => {
         </View>
 
         <MediaPlayerControls
+          toggleVideoSize={toggleVideoSize}
+          videoSize={videoSize}
           isPlaying={isPlaying}
           togglePlay={togglePlay}
           nextSource={nextSource}
@@ -94,7 +101,13 @@ const ExpoVideoScreenTest1: React.FC = () => {
         />
 
         {Array.from({length: playerCount}).map((_, index) => (
-          <VideoView key={index} style={styles.video} player={videoPlayer} />
+          <VideoView
+            key={index}
+            style={
+              videoSize === 'large' ? styles.largeVideo : styles.smallVideo
+            }
+            player={videoPlayer}
+          />
         ))}
       </ScrollView>
     </SafeAreaView>
@@ -125,9 +138,15 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 20,
   },
-  video: {
+  largeVideo: {
     width: '100%',
     height: 300,
+    backgroundColor: '#000',
+    marginBottom: 10,
+  },
+  smallVideo: {
+    width: 150,
+    height: 150,
     backgroundColor: '#000',
     marginBottom: 10,
   },
