@@ -603,15 +603,15 @@ index 0000000..f1d1e2d
 Binary files /dev/null and b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoThumbnail.dex differ
 diff --git a/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView$Companion.dex b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView$Companion.dex
 new file mode 100644
-index 0000000..8fe536d
+index 0000000..5262916
 Binary files /dev/null and b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView$Companion.dex differ
 diff --git a/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView$autoEnterPiP$2.dex b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView$autoEnterPiP$2.dex
 new file mode 100644
-index 0000000..bfd1e6b
+index 0000000..8b88ce9
 Binary files /dev/null and b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView$autoEnterPiP$2.dex differ
 diff --git a/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView.dex b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView.dex
 new file mode 100644
-index 0000000..51e1d30
+index 0000000..7261387
 Binary files /dev/null and b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoView.dex differ
 diff --git a/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoViewNotFoundException.dex b/node_modules/expo-video/android/build/.transforms/4285b0e4b136a0f8714aa2e879aee2f2/transformed/bundleLibRuntimeToDirDebug/bundleLibRuntimeToDirDebug_dex/expo/modules/video/VideoViewNotFoundException.dex
 new file mode 100644
@@ -922,7 +922,7 @@ index 0000000..0d259dd
 +o/classes
 diff --git a/node_modules/expo-video/android/build/.transforms/6597e0171032d61db03de8c516dc1bdd/transformed/classes/classes_dex/classes.dex b/node_modules/expo-video/android/build/.transforms/6597e0171032d61db03de8c516dc1bdd/transformed/classes/classes_dex/classes.dex
 new file mode 100644
-index 0000000..58543bb
+index 0000000..14264e5
 Binary files /dev/null and b/node_modules/expo-video/android/build/.transforms/6597e0171032d61db03de8c516dc1bdd/transformed/classes/classes_dex/classes.dex differ
 diff --git a/node_modules/expo-video/android/build/generated/source/buildConfig/debug/expo/modules/video/BuildConfig.java b/node_modules/expo-video/android/build/generated/source/buildConfig/debug/expo/modules/video/BuildConfig.java
 new file mode 100644
@@ -1022,7 +1022,7 @@ index 0000000..9e26dfe
 \ No newline at end of file
 diff --git a/node_modules/expo-video/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar b/node_modules/expo-video/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar
 new file mode 100644
-index 0000000..adb81c6
+index 0000000..ef86475
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/compile_library_classes_jar/debug/bundleLibCompileToJarDebug/classes.jar differ
 diff --git a/node_modules/expo-video/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar b/node_modules/expo-video/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar
 new file mode 100644
@@ -2118,15 +2118,15 @@ index 0000000..fec21ee
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoThumbnail.class differ
 diff --git a/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView$Companion.class b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView$Companion.class
 new file mode 100644
-index 0000000..471f6b0
+index 0000000..aa3a90e
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView$Companion.class differ
 diff --git a/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView$autoEnterPiP$2.class b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView$autoEnterPiP$2.class
 new file mode 100644
-index 0000000..8abfafe
+index 0000000..aa72e18
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView$autoEnterPiP$2.class differ
 diff --git a/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView.class b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView.class
 new file mode 100644
-index 0000000..6538874
+index 0000000..96cc594
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoView.class differ
 diff --git a/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoViewNotFoundException.class b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/VideoViewNotFoundException.class
 new file mode 100644
@@ -2426,7 +2426,7 @@ index 0000000..d62f651
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_dir/debug/bundleLibRuntimeToDirDebug/expo/modules/video/utils/YogaUtilsKt.class differ
 diff --git a/node_modules/expo-video/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar
 new file mode 100644
-index 0000000..28831d6
+index 0000000..01a8059
 Binary files /dev/null and b/node_modules/expo-video/android/build/intermediates/runtime_library_classes_jar/debug/bundleLibRuntimeToJarDebug/classes.jar differ
 diff --git a/node_modules/expo-video/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt b/node_modules/expo-video/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
 new file mode 100644
@@ -2447,7 +2447,7 @@ index 0000000..684c7d2
 +style Fullscreen
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab
 new file mode 100644
-index 0000000..ee6f288
+index 0000000..b9fa94d
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream
 new file mode 100644
@@ -2463,7 +2463,7 @@ index 0000000..b8872cd
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at
 new file mode 100644
-index 0000000..ef48ad6
+index 0000000..88f71df
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i
 new file mode 100644
@@ -2475,7 +2475,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab
 new file mode 100644
-index 0000000..4891959
+index 0000000..184a752
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream
 new file mode 100644
@@ -2491,7 +2491,7 @@ index 0000000..022c717
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at
 new file mode 100644
-index 0000000..cbc73c7
+index 0000000..823e2fb
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i
 new file mode 100644
@@ -2503,7 +2503,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab
 new file mode 100644
-index 0000000..29f1347
+index 0000000..67577a3
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream
 new file mode 100644
@@ -2519,7 +2519,7 @@ index 0000000..022c717
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at
 new file mode 100644
-index 0000000..53b8eb4
+index 0000000..e4ab9d1
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i
 new file mode 100644
@@ -2587,7 +2587,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/inline-functions.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab
 new file mode 100644
-index 0000000..fad8c55
+index 0000000..bebb81b
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream
 new file mode 100644
@@ -2607,7 +2607,7 @@ index 0000000..f462061
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at
 new file mode 100644
-index 0000000..9dcdd1f
+index 0000000..b9790bd
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i
 new file mode 100644
@@ -2647,7 +2647,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab
 new file mode 100644
-index 0000000..3944d6c
+index 0000000..de5de47
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream
 new file mode 100644
@@ -2663,19 +2663,19 @@ index 0000000..ed45ee1
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values
 new file mode 100644
-index 0000000..4514f61
+index 0000000..75f4450
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at
 new file mode 100644
-index 0000000..cca4d3b
+index 0000000..71e2f29
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s
 new file mode 100644
-index 0000000..76fd245
+index 0000000..ba9f150
 --- /dev/null
 +++ b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s
 @@ -0,0 +1 @@
-+ÕÃ
++ÕÃï¾
 \ No newline at end of file
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i
 new file mode 100644
@@ -2687,7 +2687,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab
 new file mode 100644
-index 0000000..1b3313f
+index 0000000..6579aa8
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream
 new file mode 100644
@@ -2703,7 +2703,7 @@ index 0000000..b8872cd
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at
 new file mode 100644
-index 0000000..c227a92
+index 0000000..7fd517e
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i
 new file mode 100644
@@ -2715,7 +2715,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab
 new file mode 100644
-index 0000000..805f16d
+index 0000000..69757d1
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream
 new file mode 100644
@@ -2731,7 +2731,7 @@ index 0000000..c14ff15
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at
 new file mode 100644
-index 0000000..c77c132
+index 0000000..a05c170
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i
 new file mode 100644
@@ -2743,7 +2743,7 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab
 new file mode 100644
-index 0000000..7fff99c
+index 0000000..caac570
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream
 new file mode 100644
@@ -2759,7 +2759,7 @@ index 0000000..a604e7e
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at
 new file mode 100644
-index 0000000..d1eeb4b
+index 0000000..fb7924e
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i
 new file mode 100644
@@ -2771,16 +2771,16 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab
 new file mode 100644
-index 0000000..409db64
+index 0000000..fadbc77
 --- /dev/null
 +++ b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab
 @@ -0,0 +1,2 @@
-+36
++37
 +0
 \ No newline at end of file
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab
 new file mode 100644
-index 0000000..1cb3229
+index 0000000..d536452
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.keystream
 new file mode 100644
@@ -2796,7 +2796,7 @@ index 0000000..b8872cd
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at
 new file mode 100644
-index 0000000..aada11f
+index 0000000..b5aefc3
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i
 new file mode 100644
@@ -2808,27 +2808,27 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab
 new file mode 100644
-index 0000000..012a0de
+index 0000000..29fd481
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream
 new file mode 100644
-index 0000000..2bae021
+index 0000000..d1c1369
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len
 new file mode 100644
-index 0000000..8c81f1d
+index 0000000..beea674
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len
 new file mode 100644
-index 0000000..c580238
+index 0000000..6ed8337
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at
 new file mode 100644
-index 0000000..6d32f13
+index 0000000..467d554
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i
 new file mode 100644
-index 0000000..de69198
+index 0000000..412f340
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len
 new file mode 100644
@@ -2836,39 +2836,39 @@ index 0000000..131e265
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab
 new file mode 100644
-index 0000000..83e16bb
+index 0000000..cbd20a1
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream
 new file mode 100644
-index 0000000..babacae
+index 0000000..8dec655
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len
 new file mode 100644
-index 0000000..7b8d451
+index 0000000..6a08fb1
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len
 new file mode 100644
-index 0000000..b757247
+index 0000000..beb116b
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values
 new file mode 100644
-index 0000000..69f2796
+index 0000000..a5dbd50
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at
 new file mode 100644
-index 0000000..6bf11dd
+index 0000000..0afecf5
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s
 new file mode 100644
-index 0000000..daf58f8
+index 0000000..5cfc923
 --- /dev/null
 +++ b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s
 @@ -0,0 +1 @@
-+Ð
++ÐÐ}
 \ No newline at end of file
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i
 new file mode 100644
-index 0000000..a955f97
+index 0000000..0bb90e9
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len
 new file mode 100644
@@ -2876,7 +2876,7 @@ index 0000000..4424406
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i.len differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin
 new file mode 100644
-index 0000000..ebbf9ab
+index 0000000..4c5895e
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/cacheable/last-build.bin differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin
 new file mode 100644
@@ -2884,7 +2884,7 @@ index 0000000..0b5c39f
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin differ
 diff --git a/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/local-state/build-history.bin b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/local-state/build-history.bin
 new file mode 100644
-index 0000000..259fe2f
+index 0000000..d68cba8
 Binary files /dev/null and b/node_modules/expo-video/android/build/kotlin/compileDebugKotlin/local-state/build-history.bin differ
 diff --git a/node_modules/expo-video/android/build/outputs/logs/manifest-merger-debug-report.txt b/node_modules/expo-video/android/build/outputs/logs/manifest-merger-debug-report.txt
 new file mode 100644
@@ -3548,15 +3548,15 @@ index 0000000..fec21ee
 Binary files /dev/null and b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoThumbnail.class differ
 diff --git a/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView$Companion.class b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView$Companion.class
 new file mode 100644
-index 0000000..471f6b0
+index 0000000..aa3a90e
 Binary files /dev/null and b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView$Companion.class differ
 diff --git a/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView$autoEnterPiP$2.class b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView$autoEnterPiP$2.class
 new file mode 100644
-index 0000000..8abfafe
+index 0000000..aa72e18
 Binary files /dev/null and b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView$autoEnterPiP$2.class differ
 diff --git a/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView.class b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView.class
 new file mode 100644
-index 0000000..6538874
+index 0000000..96cc594
 Binary files /dev/null and b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoView.class differ
 diff --git a/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoViewNotFoundException.class b/node_modules/expo-video/android/build/tmp/kotlin-classes/debug/expo/modules/video/VideoViewNotFoundException.class
 new file mode 100644
@@ -3859,7 +3859,7 @@ new file mode 100644
 index 0000000..1255e26
 Binary files /dev/null and b/node_modules/expo-video/android/src/main/java/expo/modules/.DS_Store differ
 diff --git a/node_modules/expo-video/android/src/main/java/expo/modules/video/VideoView.kt b/node_modules/expo-video/android/src/main/java/expo/modules/video/VideoView.kt
-index 6e60960..89b838f 100644
+index 6e60960..166e940 100644
 --- a/node_modules/expo-video/android/src/main/java/expo/modules/video/VideoView.kt
 +++ b/node_modules/expo-video/android/src/main/java/expo/modules/video/VideoView.kt
 @@ -6,6 +6,8 @@ import android.content.Context
@@ -3876,7 +3876,7 @@ index 6e60960..89b838f 100644
  
    override fun onAttachedToWindow() {
 +    // Force the background to be white (or transparent)
-+    background = ColorDrawable(Color.WHITE)
++    background = ColorDrawable(Color.TRANSPARENT)
 +  
 +    // Then match ExoPlayerâ€™s shutter background
 +    (this.background as? ColorDrawable)?.let {
