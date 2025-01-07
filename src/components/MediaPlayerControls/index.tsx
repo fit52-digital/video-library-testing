@@ -8,6 +8,8 @@ import SkipIcon from '../icons/SkipIcon';
 interface IMediaPlayerControls {
   isPlaying: boolean;
   togglePlay: () => void;
+  toggleVideoSize?: () => void;
+  videoSize?: 'small' | 'large';
   previousSource: () => void;
   nextSource: () => void;
   toggleValue?: boolean;
@@ -32,6 +34,8 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
     playerCount,
     onPlayerIncrease,
     onPlayerDecrease,
+    toggleVideoSize,
+    videoSize = 'large',
   } = props;
 
   const [skipCount, setSkipCount] = useState(0);
@@ -47,6 +51,16 @@ const MediaPlayerControls: React.FC<IMediaPlayerControls> = props => {
           <View style={styles.sourceToggle}>
             <Switch onValueChange={onToggle} value={toggleValue} />
             <Text style={styles.sourceLabel}>{toggleLabel}</Text>
+          </View>
+        )}
+
+        {toggleVideoSize && (
+          <View style={styles.sourceToggle}>
+            <Switch
+              onValueChange={toggleVideoSize}
+              value={videoSize === 'large'}
+            />
+            <Text style={styles.sourceLabel}>{videoSize}</Text>
           </View>
         )}
 

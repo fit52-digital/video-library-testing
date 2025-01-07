@@ -13,6 +13,11 @@ const ExpoAVVideoScreen: React.FC = () => {
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const [videoSize, setVideoSize] = useState<'small' | 'large'>('large');
+  const toggleVideoSize = () => {
+    setVideoSize(videoSize === 'small' ? 'large' : 'small');
+  };
+
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
@@ -53,6 +58,8 @@ const ExpoAVVideoScreen: React.FC = () => {
         </View>
 
         <MediaPlayerControls
+          toggleVideoSize={toggleVideoSize}
+          videoSize={videoSize}
           isPlaying={isPlaying}
           togglePlay={togglePlay}
           nextSource={nextSource}
@@ -71,7 +78,9 @@ const ExpoAVVideoScreen: React.FC = () => {
           <Video
             key={index}
             ref={el => (videoRefs.current[index] = el)}
-            style={styles.video}
+            style={
+              videoSize === 'large' ? styles.largeVideo : styles.smallVideo
+            }
             source={testVideoAssets[sourceIndex][sourceOrigin]}
             useNativeControls={false}
             isMuted={true}
@@ -107,9 +116,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
   },
-  video: {
+  largeVideo: {
     width: '100%',
     height: 300,
+    backgroundColor: '#000',
+    marginBottom: 10,
+  },
+  smallVideo: {
+    width: 150,
+    height: 150,
     backgroundColor: '#000',
     marginBottom: 10,
   },

@@ -13,6 +13,11 @@ const ExpoVideoScreenTest2: React.FC = () => {
   const [sourceOrigin, setSourceOrigin] = useState<'local' | 'remote'>('local');
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const [videoSize, setVideoSize] = useState<'small' | 'large'>('large');
+  const toggleVideoSize = () => {
+    setVideoSize(videoSize === 'small' ? 'large' : 'small');
+  };
+
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
@@ -54,6 +59,8 @@ const ExpoVideoScreenTest2: React.FC = () => {
         </View>
 
         <MediaPlayerControls
+          toggleVideoSize={toggleVideoSize}
+          videoSize={videoSize}
           isPlaying={isPlaying}
           togglePlay={togglePlay}
           nextSource={nextSource}
@@ -71,6 +78,7 @@ const ExpoVideoScreenTest2: React.FC = () => {
         {Array.from({length: playerCount}).map((_, index) => (
           <ExpoVideoStandalonePlayer
             key={index}
+            videoSize={videoSize}
             isPlaying={isPlaying}
             source={testVideoAssets[sourceIndex][sourceOrigin]}
           />
