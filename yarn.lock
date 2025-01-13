@@ -4331,10 +4331,10 @@ expo-asset@~11.0.1:
     invariant "^2.2.4"
     md5-file "^3.2.3"
 
-expo-audio@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/expo-audio/-/expo-audio-0.3.1.tgz#11ce08ae778d5072bb24501382f95c931512f0f1"
-  integrity sha512-DVqI4NhQa4z6yHVGMgWPCqBOo1waMX0LnaAnCoUfDKe9InV/NDCT/infBFleBsn0urpFrRyCAbBdyIFW8k/B4Q==
+expo-audio@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/expo-audio/-/expo-audio-0.3.3.tgz#5cba61466d94e6128a419ffb0b6dffb1fd593e7a"
+  integrity sha512-BbithVAczp6AlJGrTKWca++K5PTfGF4g1Ja+t8ifai10twDiyFeYejr5cwNSX3qujPD4WfTPBhGF8AOH+AnCOw==
 
 expo-av@^15.0.1:
   version "15.0.1"
@@ -4389,10 +4389,10 @@ expo-modules-core@2.1.2:
   dependencies:
     invariant "^2.2.4"
 
-expo-video@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/expo-video/-/expo-video-2.0.3.tgz#22ef37f6323b20fb2d2f7e7a4684977bbe98baab"
-  integrity sha512-cBY6fBVj+jUXrKw7Xfn4/QwpXKMKPdv/4LCnFHy/SjR+suG4jIHMsCM2eZgqxXF1cbA8CII5LmK6LwmKB7DjMw==
+expo-video@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/expo-video/-/expo-video-2.0.5.tgz#5c5311b0a20dcb7897d06cd4f9d7fb0ce13711d9"
+  integrity sha512-K5Q4bFKtYq0wEC38mckWUYeaTXsmhl6duidhSdbA63VBy6cwxDOk8uPsFPTQD3FXKJg6wFB0z8ZUASSPuUaY5A==
 
 expo@^52.0.0:
   version "52.0.20"
