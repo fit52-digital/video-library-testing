@@ -9,10 +9,6 @@ import {EventSubscription} from 'expo-modules-core';
 let audioPlayerObject: AudioPlayer | null = null;
 let subscription: EventSubscription | null = null;
 
-// We'll store the "resolve" function for whichever track is currently playing.
-// When playback ends, we call this to finish the promise returned by loadAndPlayAudioTrack.
-let resolveCurrentTrack: (() => void) | null = null;
-
 /**
  * Converts incoming URI to the AudioSource format required by expo-audio.
  */
@@ -45,28 +41,6 @@ const setupAudioPlayer = (): void => {
     if (!audioPlayerObject) {
       throw new Error('Could not create audio player object');
     }
-
-    // Attach ONE listener for "playbackStatusUpdate".
-    subscription = audioPlayerObject.addListener(
-      'playbackStatusUpdate',
-      (statusUpdate: AudioStatus) => {
-        console.log(
-          'playbackStatusUpdate => didJustFinish:',
-          statusUpdate.didJustFinish,
-          '| playbackState:',
-          statusUpdate.playbackState,
-        );
-
-        if (statusUpdate.playbackState === 'readyToPlay') {
-          audioPlayerObject?.play();
-        }
-
-        // If you only want to play once in setup and then remove the listener:
-        if (statusUpdate.didJustFinish) {
-          resolveCurrentTrack?.();
-        }
-      },
-    );
   } catch (error) {
     console.log('Error initializing audio player', error);
   }
@@ -111,17 +85,28 @@ const loadAndPlayAudioTrack = async (uri: string | number): Promise<void> => {
   }
 
   try {
-    // Assign the per-track callback so that handlePlaybackStatusUpdate can call it
-    // onCurrentTrackEnd = onTrackEndCallback || null;
-
-    // Replace the source
+    console.log(' - replace()', source);
     audioPlayerObject.replace(source);
 
-    // Return a Promise that resolves in handlePlaybackStatusUpdate when didJustFinish = true
-    // eslint-disable-next-line consistent-return
+    console.log(' - play()', source);
+    audioPlayerObject.play();
+
     return new Promise<void>(resolve => {
-      resolveCurrentTrack = resolve;
-      // If an error happens while loading/playing, you can catch it outside or add more logic here
+      const disposer = audioPlayerObject?.addListener(
+        'playbackStatusUpdate',
+        (statusUpdate: AudioStatus) => {
+          if (statusUpdate.playbackState === 'readyToPlay') {
+            console.log(' - readyToPlay', source);
+            audioPlayerObject?.play();
+          }
+
+          if (statusUpdate.didJustFinish) {
+            console.log(' - resolve()', source);
+            resolve?.();
+            disposer?.remove();
+          }
+        },
+      );
     });
   } catch (error) {
     console.log('loadAndPlayAudioTrack: Error loading or playing track', error);
@@ -153,7 +138,7 @@ const multiLoadAudioTrack = async (
           return Promise.resolve();
         }
 
-        return loadAndPlayAudioTrack(url);
+        return await loadAndPlayAudioTrack(url);
       },
       Promise.resolve(),
     );

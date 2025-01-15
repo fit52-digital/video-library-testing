@@ -67,6 +67,15 @@ const HomeScreen: React.FC = () => {
         navigation.navigate('ExpoVideoAndAudioTest1' as never);
       },
     },
+    {
+      title: 'expo-audio (queue)',
+      subtitle: 'single audio player instance',
+      description:
+        "Testing the expo-audio library's ability to queue multiple audio tracks on a single player instance",
+      onPress: () => {
+        navigation.navigate('ExpoAudioTest2' as never);
+      },
+    },
   ];
 
   const reactNativeVideoComponents = [
