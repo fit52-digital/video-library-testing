@@ -1,9 +1,4 @@
-import {
-  AudioPlayer,
-  AudioSource,
-  createAudioPlayer,
-  AudioStatus,
-} from 'expo-audio';
+import {AudioPlayer, AudioSource, createAudioPlayer} from 'expo-audio';
 import {EventSubscription} from 'expo-modules-core';
 
 let audioPlayerObject: AudioPlayer | null = null;
@@ -70,47 +65,31 @@ const releaseAudioPlayer = () => {
  * loadAndPlayAudioTrack returns a Promise that resolves once the track finishes playback.
  */
 const loadAndPlayAudioTrack = async (uri: string | number): Promise<void> => {
-  if (!audioPlayerObject) {
-    console.log('loadAndPlayAudioTrack called, but audioPlayerObject is null.');
-
-    return;
-  }
-
   const source = convertIncomingUriToSource(uri);
 
-  if (!source) {
-    console.log('loadAndPlayAudioTrack: Invalid source provided.', source);
-
+  if (!audioPlayerObject) {
     return;
   }
 
   try {
-    console.log(' - replace()', source);
     audioPlayerObject.replace(source);
 
-    console.log(' - play()', source);
     audioPlayerObject.play();
 
-    return new Promise<void>(resolve => {
-      const disposer = audioPlayerObject?.addListener(
+    return new Promise(resolve => {
+      const playToEndSubscriptionDisposer = audioPlayerObject?.addListener(
         'playbackStatusUpdate',
-        (statusUpdate: AudioStatus) => {
-          if (statusUpdate.playbackState === 'readyToPlay') {
-            console.log(' - readyToPlay', source);
-            audioPlayerObject?.play();
-          }
+        status => {
+          if (status.didJustFinish) {
+            console.log('Video has ended', source);
 
-          if (statusUpdate.didJustFinish) {
-            console.log(' - resolve()', source);
-            resolve?.();
-            disposer?.remove();
+            playToEndSubscriptionDisposer?.remove();
+            resolve();
           }
         },
       );
     });
-  } catch (error) {
-    console.log('loadAndPlayAudioTrack: Error loading or playing track', error);
-  }
+  } catch (err: any) {}
 };
 
 /**
@@ -119,12 +98,6 @@ const loadAndPlayAudioTrack = async (uri: string | number): Promise<void> => {
 const multiLoadAudioTrack = async (
   trackUrls: (string | number)[],
 ): Promise<void> => {
-  if (!audioPlayerObject) {
-    console.log('multiLoadAudioTrack called, but audioPlayerObject is null.');
-
-    return;
-  }
-
   try {
     await trackUrls.reduce(
       async (
@@ -138,15 +111,12 @@ const multiLoadAudioTrack = async (
           return Promise.resolve();
         }
 
-        return await loadAndPlayAudioTrack(url);
+        return loadAndPlayAudioTrack(url);
       },
       Promise.resolve(),
     );
   } catch (err) {
-    console.log(
-      'multiLoadAudioTrack: An error occurred while playing multiple tracks:',
-      err,
-    );
+    console.log('An error occurred while playing the tracks:', err);
   }
 };
 

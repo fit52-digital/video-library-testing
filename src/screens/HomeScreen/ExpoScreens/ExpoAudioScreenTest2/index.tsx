@@ -14,10 +14,14 @@ import {
   multiLoadAudioTrack,
   setupAudioPlayer,
 } from '../../../../services/audioPlayer';
+import {
+  setupVideoPlayer,
+  multiLoadTracks,
+} from '../../../../services/videoAudioPlayer';
 
 const ExpoAudioScreenTest2: React.FC = () => {
   useEffect(() => {
-    setupAudioPlayer();
+    setupVideoPlayer();
   }, []);
 
   return (
@@ -30,7 +34,7 @@ const ExpoAudioScreenTest2: React.FC = () => {
         <Button
           title="Load queue"
           onPress={async () => {
-            await multiLoadAudioTrack([
+            await multiLoadTracks([
               testAudioAssets['1'].local,
               testAudioAssets['2'].local,
               testAudioAssets['3'].local,
