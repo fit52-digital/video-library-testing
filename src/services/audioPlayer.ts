@@ -72,6 +72,7 @@ const loadAndPlayAudioTrack = async (uri: string | number): Promise<void> => {
   }
 
   try {
+    console.log('replacing and playing track:', source);
     audioPlayerObject.replace(source);
 
     audioPlayerObject.play();
@@ -80,8 +81,9 @@ const loadAndPlayAudioTrack = async (uri: string | number): Promise<void> => {
       const playToEndSubscriptionDisposer = audioPlayerObject?.addListener(
         'playbackStatusUpdate',
         status => {
+          console.log('playbackStatusUpdate:', status);
           if (status.didJustFinish) {
-            console.log('Video has ended', source);
+            console.log('Audio has for src', source);
 
             playToEndSubscriptionDisposer?.remove();
             resolve();
@@ -98,6 +100,8 @@ const loadAndPlayAudioTrack = async (uri: string | number): Promise<void> => {
 const multiLoadAudioTrack = async (
   trackUrls: (string | number)[],
 ): Promise<void> => {
+  console.log('loading and playing tracks:', trackUrls);
+
   try {
     await trackUrls.reduce(
       async (
@@ -124,17 +128,7 @@ const multiLoadAudioTrack = async (
  * Resume the currently loaded track (if any).
  */
 const playAudioTrack = (): void => {
-  if (!audioPlayerObject) {
-    console.log('playAudioTrack: No audio player to play from.');
-
-    return;
-  }
-
-  try {
-    audioPlayerObject.play();
-  } catch (err) {
-    console.log('playAudioTrack: Error playing audio:', err);
-  }
+  audioPlayerObject?.play();
 };
 
 /**
