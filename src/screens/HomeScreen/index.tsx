@@ -73,6 +73,15 @@ const HomeScreen: React.FC = () => {
       },
     },
     {
+      title: 'expo-video (audio only)',
+      subtitle: 'multiple player instances without view',
+      description:
+        'Stress test the latest expo-video library using audio-only players without a view, benchmarking it against expo-audio.\n\nThe test evaluates whether expo-video offers similar or better performance improvements.',
+      onPress: () => {
+        navigation.navigate('ExpoVideoTest3' as never);
+      },
+    },
+    {
       title: 'expo queue player',
       subtitle: 'single player instance',
       description:
