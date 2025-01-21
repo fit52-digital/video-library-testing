@@ -80,12 +80,22 @@ const multiLoadTracks = async (
   }
 };
 
-const togglePlay = async (): Promise<void> => {
+const togglePlayPause = async (): Promise<void> => {
   if (!videoPlayerObject) {
     return;
   }
 
-  videoPlayerObject.play();
+  try {
+    if (videoPlayerObject.playing) {
+      videoPlayerObject.pause();
+
+      return;
+    }
+
+    videoPlayerObject.play();
+  } catch (err) {
+    console.log('An error occurred while toggling play/pause:', err);
+  }
 };
 
-export {setupVideoPlayer, multiLoadTracks, togglePlay};
+export {setupVideoPlayer, multiLoadTracks, togglePlayPause};

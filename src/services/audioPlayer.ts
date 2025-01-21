@@ -148,6 +148,24 @@ const pauseAudioTrack = (): void => {
   }
 };
 
+const togglePlayPause = async (): Promise<void> => {
+  if (!audioPlayerObject) {
+    return;
+  }
+
+  try {
+    if (audioPlayerObject.playing) {
+      audioPlayerObject.pause();
+
+      return;
+    }
+
+    audioPlayerObject.play();
+  } catch (err) {
+    console.log('An error occurred while toggling play/pause:', err);
+  }
+};
+
 /**
  * Discard the current track, if any.
  */
@@ -174,4 +192,5 @@ export {
   playAudioTrack,
   pauseAudioTrack,
   discardAudioTrack,
+  togglePlayPause,
 };
