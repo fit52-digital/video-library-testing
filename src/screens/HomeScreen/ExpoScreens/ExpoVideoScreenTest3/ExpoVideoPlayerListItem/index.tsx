@@ -11,7 +11,10 @@ interface IExpoAudioPlayerItemProps {
 const ExpoVideoPlayerListItem: React.FC<IExpoAudioPlayerItemProps> = props => {
   const {source, isPlaying = false, index} = props;
 
-  const videoPlayer = useVideoPlayer(null);
+  const videoPlayer = useVideoPlayer(null, player => {
+    player.audioMixingMode = 'duckOthers';
+    player.play();
+  });
 
   useEffect(() => {
     if (videoPlayer) {
